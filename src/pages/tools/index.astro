@@ -1,0 +1,73 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro'
+import ToolSection from '@/components/ToolSection.astro'
+import Button from '@/components/Button.astro'
+
+const DESIGN = [
+	{
+		name: 'Figma',
+		description: 'Ferramenta de Design',
+		href: 'https://www.figma.com/',
+		iconPath: 'figma',
+		iconBgColour: '#000001'
+	}
+]
+
+const PRODUCTIVITY = [
+	{
+		name: 'Notion',
+		description: 'Anotações em geral',
+		href: 'https://www.notion.so/product',
+		iconPath: 'notion',
+		iconBgColour: '#EFEFEE'
+	}
+]
+
+const DEVELOPMENT = [
+	{
+		name: 'VS Code',
+		description: 'IDE',
+		href: 'https://code.visualstudio.com/',
+		iconPath: 'vscode',
+		iconBgColour: '#2C2C32'
+	},
+	{
+		name: 'ChatGPT',
+		description: 'IA',
+		href: 'https://chat.openai.com/',
+		iconPath: 'chatgpt',
+		iconBgColour: '#06A67F'
+	}
+]
+---
+
+<PageLayout meta={{ title: 'Home' }}>
+	<div class='w-full'>
+		<Button title='Voltar' href='/' style='button'>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='14'
+				height='14'
+				viewBox='0 0 24 24'
+				slot='icon-before'
+			>
+				<path
+					fill='currentColor'
+					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+				>
+				</path>
+			</svg>
+		</Button>
+
+		<div class='mt-5 flex w-full flex-col gap-y-10'>
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Ferramentas</h1>
+				<p>Ferramentas e software que uso diariamente</p>
+			</div>
+
+			<ToolSection title='Design' tools={DESIGN} />
+			<ToolSection title='Produtividade' tools={PRODUCTIVITY} />
+			<ToolSection title='Desenvolvimento' tools={DEVELOPMENT} />
+		</div>
+	</div>
+</PageLayout>
