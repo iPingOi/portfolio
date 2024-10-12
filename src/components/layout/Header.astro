@@ -7,13 +7,8 @@
 		class='relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center'
 		aria-label='global'
 	>
-		<a class='flex-none text-xl font-semibold' id='brand' href='/' aria-label='Brand'>
-			<svg
-				width='120'
-				viewBox='0 0 229 94'
-				fill='none'
-				xmlns='http://www.w3.org/2000/svg'
-			>
+		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>
+			<svg width='120' viewBox='0 0 229 94' fill='none' xmlns='http://www.w3.org/2000/svg'>
 				<path
 					d='M7.96003 93.08C3.28803 93.08 0.952026 90.584 0.952026 85.592V47.768C0.952026 39.064 2.87203 32.568 6.71203 28.28C10.552 23.992 15.928 21.848 22.84 21.848C29.88 21.848 35.416 24.088 39.448 28.568C43.544 33.048 45.592 39.608 45.592 48.248C45.592 54.008 44.76 58.616 43.096 62.072C41.432 65.464 39.128 67.928 36.184 69.464C33.24 71 29.848 71.768 26.008 71.768C22.68 71.768 19.928 71.288 17.752 70.328C15.64 69.368 13.976 67.896 12.76 65.912C13.208 67.192 13.528 68.44 13.72 69.656C13.976 70.872 14.136 72.28 14.2 73.88C14.328 75.48 14.392 77.528 14.392 80.024V85.592C14.392 90.584 12.248 93.08 7.96003 93.08ZM23.512 60.536C26.2 60.536 28.28 59.608 29.752 57.752C31.288 55.832 32.056 52.248 32.056 47C32.056 41.752 31.288 38.2 29.752 36.344C28.28 34.424 26.2 33.464 23.512 33.464C20.824 33.464 18.712 34.424 17.176 36.344C15.704 38.2 14.968 41.752 14.968 47C14.968 52.248 15.704 55.832 17.176 57.752C18.712 59.608 20.824 60.536 23.512 60.536Z'
 					fill='currentColor'></path>
@@ -100,6 +95,5 @@
 			detail: { theme: getCurrentTheme() === 'light' ? 'dark' : 'light' }
 		})
 		document.dispatchEvent(toggleDarkModeEvent)
-		document.getElementById('brand')?.innerText
 	})
 </script>

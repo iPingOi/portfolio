@@ -12,6 +12,5 @@ export function getFormattedDate(
 			...options
 		})
 	}
-
 	return dateFormat.format(new Date(date))
 }

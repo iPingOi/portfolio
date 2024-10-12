@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'pt-BR',
 	// Meta property, found in src/components/BaseHead.astro L:42
-	ogLocale: 'pt_BR',
+	ogLocale: 'pt_br',
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: 'pt-BR',

@@ -39,6 +39,7 @@
 		--ring: 240 5.9% 10%;
 		--radius: 0.5rem;
 	}
+
 	.dark {
 		--background: 240 10% 3.9%;
 		--foreground: 0 0% 98%;
@@ -66,7 +67,24 @@
 	* {
 		@apply border-border;
 	}
+
 	body {
 		@apply bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	.card-wrapper {
+		@apply relative overflow-hidden rounded-full bg-gradient-to-b;
+	}
+
+	.card-wrapper::before {
+		background: conic-gradient(pink 0deg, #3772FF 0deg, transparent 80deg);
+
+		@apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
+	}
+
+	.card-content {
+		@apply absolute left-[1px] top-[1px] h-[calc(100%-2px)] w-[calc(100%-2px)] rounded-full bg-gradient-to-b;
 	}
 }
