@@ -27,6 +27,28 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 <AstroSeo
 	title='Olá, eu sou o PingO um Front-End Developer.'
 	description='Um aprendiz das artes ocultas da web, JavaScript é uma delas. =) Venho sempre me aperfeiçoando com novas tecnologias e métodos para deixar o código mais limpo, seguro e fidedigno aos projetos.'
+	canonical='https://www.pingodev.com/'
+	openGraph={{
+		url: 'https://www.pingodev.com/',
+		title: 'Olá, eu sou o PingO um Front-End Developer.',
+		description:
+			'Um aprendiz das artes ocultas da web, JavaScript é uma delas. =) Venho sempre me aperfeiçoando com novas tecnologias e métodos para deixar o código mais limpo, seguro e fidedigno aos projetos.',
+		images: [
+			{
+				url: '/social-card.png',
+				width: 1200,
+				height: 630,
+				alt: 'Social Card',
+				type: 'image/png'
+			}
+		],
+		site_name: 'PingO'
+	}}
+	twitter={{
+		handle: '@handle',
+		site: '@site',
+		cardType: 'summary_large_image'
+	}}
 />
 
 <PageLayout meta={{ title: 'Home' }}>
