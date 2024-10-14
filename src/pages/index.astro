@@ -1,4 +1,5 @@
 ---
+import { AstroSeo } from '@astrolib/seo'
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
@@ -22,6 +23,11 @@ const MAX_POSTS = 10
 const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
+
+<AstroSeo
+	title='Olá, eu sou o PingO um Front-End Developer.'
+	description='Um aprendiz das artes ocultas da web, JavaScript é uma delas. =) Venho sempre me aperfeiçoando com novas tecnologias e métodos para deixar o código mais limpo, seguro e fidedigno aos projetos.'
+/>
 
 <PageLayout meta={{ title: 'Home' }}>
 	<div class='flex w-full flex-col gap-y-10'>
@@ -175,7 +181,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				/>
 			</div>
 
-			<div class='flex justify-center'>
+			<div class='flex justify-center py-2'>
 				<Button title='Ver mais' href='/projects' style='button'>
 					<svg
 						width='14'
