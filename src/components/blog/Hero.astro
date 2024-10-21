@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { Image } from 'astro:assets'
+import { Image, inferRemoteSize } from 'astro:assets'
 import FormattedDate from '../FormattedDate.astro'
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 }
 
 const {
+	content,
 	content: { data, render }
 } = Astro.props
 
@@ -19,14 +20,16 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 ---
 
 {
-	data.coverImage && (
+	data && (
 		<div class='aspect-h-9 aspect-w-16 mb-6'>
 			<Image
-				alt={data.coverImage.alt}
+				alt={`${data.title} Backdrop`}
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
-				src={data.coverImage.src}
+				src={`/src/assets/posts/${content.slug}.png`}
+				width={1440}
+				height={810}
 			/>
 		</div>
 	)
