@@ -3,10 +3,13 @@ title: 'Graphql com GOLang usando gqlgen'
 description: 'Criando um crud básico com golang, graphql e gqlgen'
 publishDate: '04 May 2024'
 updatedDate: '12 Sept 2024'
+src: './cover.png'
 coverImage:
   src: './cover.png'
   alt: 'Graphql com GOLang usando gqlgen wallpaper'
 tags: ['golang', 'graphql', 'gqlgen']
+setup: |
+  import { Picture } from "astro-imagetools/components";
 ---
 
 ## Minha experiência com o projeto

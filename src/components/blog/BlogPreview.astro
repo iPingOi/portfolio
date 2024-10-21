@@ -1,0 +1,25 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types'
+import type { CollectionEntry } from 'astro:content'
+
+import BlogCard from '../BlogCard.astro'
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+	post: CollectionEntry<'post'>
+}
+
+const { as: Tag = 'div', post } = Astro.props
+const postDate = post.data.updatedDate ?? post.data.publishDate
+---
+
+<Tag>
+	<BlogCard
+		href={`/blog/${post.slug}/`}
+		heading={post.data.title}
+		subheading={post.data.description}
+		imagePath={`/src/assets/posts/${post.slug}.png`}
+		altText={post.data.coverImage.alt}
+		postDate={postDate}
+	/>
+</Tag>
+<!-- imagePath='/src/assets/posts/cover.png' -->

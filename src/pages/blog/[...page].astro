@@ -6,7 +6,7 @@ import type { CollectionEntry } from 'astro:content'
 
 import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
+import BlogPreview from '@/components/blog/BlogPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
 
@@ -32,13 +32,13 @@ const meta = {
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
-			text: `← Previous Posts`,
+			text: `← Postagens anteriores`,
 			url: page.url.prev
 		}
 	}),
 	...(page.url.next && {
 		nextUrl: {
-			text: `Next Posts →`,
+			text: `Próximas postagens →`,
 			url: page.url.next
 		}
 	})
@@ -63,18 +63,21 @@ const paginationProps = {
 			</svg>
 		</Button>
 
-		<h1 class='mb-6 mt-5 text-2xl font-bold'>Blog</h1>
-		{page.data.length === 0 && <p>No posts yet.</p>}
+		<div class='my-10'>
+			<h1 class='mb-1 text-2xl font-bold'>Blog</h1>
+			<p>Postagens sobre tecnologia e projetos.</p>
+		</div>
+		{page.data.length === 0 && <p>Nenhuma postagem ainda.</p>}
 
 		{
 			page.data.length > 0 && (
 				<div class='grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8'>
 					<section aria-label='Blog posts list'>
-						<ul class='flex flex-col gap-y-4 text-start'>
+						<div class='grid grid-cols-2 gap-2 text-start'>
 							{page.data.map((p) => (
-								<PostPreview post={p} withDesc />
+								<BlogPreview post={p} />
 							))}
-						</ul>
+						</div>
 						<Pagination {...paginationProps} />
 					</section>
 					{!!uniqueTags.length && (
