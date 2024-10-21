@@ -18,7 +18,7 @@ const postDate = post.data.updatedDate ?? post.data.publishDate
 		heading={post.data.title}
 		subheading={post.data.description}
 		imagePath={`/src/assets/posts/${post.slug}.png`}
-		altText={post.data.coverImage.alt}
+		altText={`${post.data.title} Backdrop`}
 		postDate={postDate}
 	/>
 </Tag>
