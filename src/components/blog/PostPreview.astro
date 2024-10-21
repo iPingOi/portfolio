@@ -3,16 +3,29 @@ import type { HTMLTag, Polymorphic } from 'astro/types'
 import type { CollectionEntry } from 'astro:content'
 
 import FormattedDate from '../FormattedDate.astro'
+import PostsCard from '../PostsCard.astro'
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<'post'>
 	withDesc?: boolean
 }
 
-const { as: Tag = 'div', post, withDesc = false } = Astro.props
+const { as: Tag = 'div', post, withDesc = true } = Astro.props
 const postDate = post.data.updatedDate ?? post.data.publishDate
 ---
 
+<PostsCard
+	heading={post.data.title}
+	subheading={post.data.description}
+	date={withDesc && postDate}
+	imagePath={`/src/assets/posts/graphql-com-golang-usando-gqlgen.png`}
+	altText={post.data.title}
+	href={`/blog/${post.slug}/`}
+/>
+
+<!-- '/src/assets/posts/graphql-com-golang-usando-gqlgen.png' -->
+<!-- imagePath={`/src/assets/posts/${post.slug}.png`} -->
+<!-- 
 <li class='flex flex-col gap-2 sm:flex-row sm:gap-x-4 [&_q]:basis-full'>
 	<FormattedDate class='min-w-[120px]' date={postDate} />
 	-
@@ -33,4 +46,4 @@ const postDate = post.data.updatedDate ?? post.data.publishDate
 			)
 		}
 	</Tag>
-</li>
+</li> -->

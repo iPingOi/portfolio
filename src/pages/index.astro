@@ -19,7 +19,7 @@ const frontend = ['Reactjs', 'Nextjs', 'Astrojs']
 const backend = ['Nodejs', 'Elysiajs']
 const others = ['Figma', 'Git', 'Docker', 'Nginx', 'Graphql']
 
-const MAX_POSTS = 10
+const MAX_POSTS = 2
 const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
@@ -39,7 +39,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				alt: 'Social Card',
 				type: 'image/png'
 			}
-		],
+		]
 	}}
 />
 
@@ -113,19 +113,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				fidedigno aos projetos.
 			</p>
 		</Section>
-		{
-			allPostsByDate.length > 0 && (
-				<Section title='Posts'>
-					<ul class='flex flex-col gap-y-2'>
-						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
-						))}
-					</ul>
-				</Section>
-			)
-		}
 
 		<Section title='Experiência'>
 			<Card
@@ -175,7 +162,29 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			/>
 		</Section>
 
+		{
+			allPostsByDate.length > 0 && (
+				<Section title='Blog'>
+					<div class='flex justify-end py-2'>
+						<Button title='Ver mais →' href='/blog/' style='button' />
+					</div>
+
+					<div class='grid grid-cols-2 flex-col gap-3'>
+						{allPostsByDate.map((p) => (
+							<div class='flex flex-col gap-x-2 sm:flex-row'>
+								<PostPreview post={p} />
+							</div>
+						))}
+					</div>
+				</Section>
+			)
+		}
+
 		<Section title='Projetos'>
+			<div class='flex justify-end py-2'>
+				<Button title='Ver mais →' href='/projects/' style='button' />
+			</div>
+
 			<div class='grid grid-cols-2 flex-col gap-3'>
 				<ProjectCard
 					href='https://www.google.com'
@@ -193,23 +202,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					altText='Lorem, ipsum dolor sit'
 					class=''
 				/>
-			</div>
-
-			<div class='flex justify-center py-2'>
-				<Button title='Ver mais' href='/projects' style='button'>
-					<svg
-						width='14'
-						height='14'
-						viewBox='0 0 14 14'
-						fill='currentColor'
-						xmlns='http://www.w3.org/2000/svg'
-						slot='icon-after'
-					>
-						<path
-							d='M9.96291 6.70833L6.58425 3.32966L7.00016 2.91666L11.0835 7L7.00016 11.0833L6.58425 10.6703L9.96291 7.29166L2.91683 7.29166L2.91683 6.70833L9.96291 6.70833Z'
-						></path>
-					</svg>
-				</Button>
 			</div>
 		</Section>
 
