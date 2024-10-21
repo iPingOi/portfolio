@@ -169,7 +169,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						<Button title='Ver mais →' href='/blog/' style='button' />
 					</div>
 
-					<div class='grid grid-cols-2 flex-col gap-3'>
+					<div class='grid grid-cols-1 flex-col gap-3 md:grid-cols-2'>
 						{allPostsByDate.map((p) => (
 							<div class='flex flex-col gap-x-2 sm:flex-row'>
 								<PostPreview post={p} />
@@ -185,7 +185,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				<Button title='Ver mais →' href='/projects/' style='button' />
 			</div>
 
-			<div class='grid grid-cols-2 flex-col gap-3'>
+			<div class='grid grid-cols-1 flex-col gap-3 md:grid-cols-2'>
 				<ProjectCard
 					href='https://www.google.com'
 					heading='Consectetur'

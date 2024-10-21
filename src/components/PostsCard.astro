@@ -11,9 +11,7 @@ const {
 	subheading,
 	date,
 	imagePath,
-	altText,
-	imageClass,
-	target
+	altText
 } = Astro.props
 const images = import.meta.glob<{ default: ImageMetadata }>(
 	'/src/assets/posts/*.{jpeg,jpg,png,gif}'
@@ -95,7 +93,7 @@ if (imagePath) {
 					})
 				}
 			</h2>
-		</div> --
+		</div>
 
 <slot />
 
