@@ -7,7 +7,8 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'PingO',
 	// Meta property used as the default description meta property
-	description: 'Bem-vindo ao meu portfólio! Eu sou o PingO um desenvolvedor front-end apaixonado por criar experiências web atraentes e funcionais. Com uma sólida compreensão das tecnologias modernas, busco sempre unir design e usabilidade em meus projetos.',
+	description:
+		'Bem-vindo ao meu portfólio! Eu sou o PingO um desenvolvedor front-end apaixonado por criar experiências web atraentes e funcionais. Com uma sólida compreensão das tecnologias modernas, busco sempre unir design e usabilidade em meus projetos.',
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'pt-BR',
 	// Meta property, found in src/components/BaseHead.astro L:42

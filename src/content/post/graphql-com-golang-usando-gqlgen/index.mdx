@@ -10,24 +10,31 @@ tags: ['golang', 'graphql', 'gqlgen']
 ---
 
 ## Minha experiência com o projeto
+
 Este projeto foi criado junto com a plataforma do [FullCycle](https://fullcycle.com.br/) para aprender mais sobre golang e graphql, um aprendizado de ouro, não achei que seria tão simples e "fácil" de executar quando eu o vi pela primeira vez. Neste projeto foi utilizado [gqlgen](https://gqlgen.com/) que é uma biblioteca em Go para construir backends em graphql, utilizando **Schema First Approach** como eles gostam de dizer e realmente me surpreendi com a facilidade e o resultado.
 
 A utilização do [gqlgen](https://gqlgen.com/) é bem simples, basta utilizar o **go mod init** e adiciona-lo ao projeto e sair testando e aprendendo mais sobre esta biblioteca incrível.
 
 ## Iniciando gqlgen do zero
+
 Iniciando novo módulo:
+
 ```zsh
 mkdir example
 cd example
 go mod init example
 ```
+
 Adicionando ferramentas ao projeto:
+
 ```zsh
 printf '//go:build tools\npackage tools\nimport (_ "github.com/99designs/gqlgen"\n _ "github.com/99designs/gqlgen/graphql/introspection")' | gofmt > tools.go
 
 go mod tidy
 ```
+
 Gerar configuração e modelos:
+
 ```zsh
 go run github.com/99designs/gqlgen init
 
@@ -35,15 +42,19 @@ go mod tidy
 ```
 
 Iniciar o servidor:
+
 ```zsh
 mkdir example
 cd example
 go mod init example
 ```
+
 Gerar configurações e modelos:
+
 ```zsh
 go run server.go
 ```
+
 Veja mais na documentação do [gqlgen](https://gqlgen.com/)
 
 ## Funcionalidades do projeto
@@ -66,67 +77,74 @@ Graphql queries:
 ```gql
 # Create category #
 mutation createCategory {
-  createCategory(input: {name: "Tecnologia", description: "Cursos de Tecnologia"}) {
-    id
-    name
-    description
-  }
+	createCategory(input: { name: "Tecnologia", description: "Cursos de Tecnologia" }) {
+		id
+		name
+		description
+	}
 }
 
 # Create course #
 mutation createCourse {
-  createCourse(input: {name: "Full Cycle", description: "The best!", categoryId: "53ff5e69-79ea-4fd5-bbfc-867e09a89a85"}) {
-    id
-    name
-  }
+	createCourse(
+		input: {
+			name: "Full Cycle"
+			description: "The best!"
+			categoryId: "53ff5e69-79ea-4fd5-bbfc-867e09a89a85"
+		}
+	) {
+		id
+		name
+	}
 }
 
 # Find categories #
 query queryCategories {
-  categories {
-    id
-    name
-    description
-  }
+	categories {
+		id
+		name
+		description
+	}
 }
 
 # Find categories with courses #
 query queryCategoriesWithCourses {
-  categories {
-    id
-    name
-    description
-    courses {
-      id
-      name
-    }
-  }
+	categories {
+		id
+		name
+		description
+		courses {
+			id
+			name
+		}
+	}
 }
 
 # Find courses #
 query queryCourses {
-  courses {
-    id
-    name
-  }
+	courses {
+		id
+		name
+	}
 }
 
 # Find courses with category #
 query queryCoursesWithCategory {
-  courses {
-    id
-    name
-    description
-    category {
-      id
-      name
-      description
-    }
-  }
+	courses {
+		id
+		name
+		description
+		category {
+			id
+			name
+			description
+		}
+	}
 }
 ```
 
 ## Código fonte no Github
+
 Todo o projeto foi desenvolvido utilizando o Github para controle de versão, cada commit tem uma feat nova.
 
 [Acessar o projeto no Github](https://github.com/iPingOi/graphqlcycle)
