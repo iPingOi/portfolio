@@ -17,7 +17,7 @@ const postDate = post.data.updatedDate ?? post.data.publishDate
 	heading={post.data.title}
 	subheading={post.data.description}
 	date={withDesc && postDate}
-	imagePath={`/src/assets/posts/graphql-com-golang-usando-gqlgen.png`}
+	imagePath={`/src/assets/posts/${post.slug}.png`}
 	altText={post.data.title}
 	href={`/blog/${post.slug}/`}
 />
