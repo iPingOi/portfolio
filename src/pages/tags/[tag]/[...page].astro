@@ -1,13 +1,13 @@
 ---
 export const prerender = true
 
-import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
+import type { GetStaticPaths, Page } from 'astro'
 
+import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import Button from '@/components/Button.astro'
 import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
@@ -39,13 +39,13 @@ const meta = {
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
-			text: `← Previous Tags`,
+			text: '← Previous Tags',
 			url: page.url.prev
 		}
 	}),
 	...(page.url.next && {
 		nextUrl: {
-			text: `Next Tags →`,
+			text: 'Next Tags →',
 			url: page.url.next
 		}
 	})
@@ -54,7 +54,7 @@ const paginationProps = {
 
 <PageLayout meta={meta}>
 	<div class='w-full'>
-		<Button title='Voltar' href='/blog' style='button'>
+		<Button title='Voltar' href='/' style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'

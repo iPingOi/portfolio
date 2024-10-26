@@ -1,19 +1,19 @@
 ---
-import { AstroSeo } from '@astrolib/seo'
-import PageLayout from '../layouts/BaseLayout.astro'
-import Section from '../components/Section.astro'
-import Card from '../components/Card.astro'
-import ProjectCard from '../components/ProjectCard.astro'
-import Label from '../components/Label.astro'
-import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
+import { AstroSeo } from '@astrolib/seo'
+import Card from '../components/Card.astro'
+import Label from '../components/Label.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Section from '../components/Section.astro'
+import SkillLayout from '../components/SkillLayout.astro'
+import PageLayout from '../layouts/BaseLayout.astro'
 
 import { Image } from 'astro:assets'
 import profilePhoto from '../assets/profile.png'
 
-import { getAllPosts, getAllProjects, sortMDByDate, sortMDByDateProjects } from '@/utils'
 import Button from '@/components/Button.astro'
 import ProjectsPreview from '@/components/blog/ProjectsPreview.astro'
+import { getAllPosts, getAllProjects, sortMDByDate, sortMDByDateProjects } from '@/utils'
 
 const languages = ['JavaScript', 'TypeScript', 'Golang']
 const frontend = ['Reactjs', 'Nextjs', 'Astrojs']
@@ -186,7 +186,7 @@ const allPostsByDateProjects = sortMDByDateProjects(allPostsProjects).slice(0, M
 
 		{
 			allPostsByDateProjects.length > 0 && (
-				<Section title='Blog'>
+				<Section title='Projetos'>
 					<div class='flex justify-end py-2'>
 						<Button title='Ver mais →' href='/blog/' style='button' />
 					</div>

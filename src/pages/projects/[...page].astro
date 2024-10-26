@@ -1,8 +1,8 @@
 ---
 export const prerender = true
 
-import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
+import type { GetStaticPaths, Page } from 'astro'
 
 import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
@@ -32,13 +32,13 @@ const meta = {
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
-			text: `← Postagens anteriores`,
+			text: '← Postagens anteriores',
 			url: page.url.prev
 		}
 	}),
 	...(page.url.next && {
 		nextUrl: {
-			text: `Próximas postagens →`,
+			text: 'Próximas postagens →',
 			url: page.url.next
 		}
 	})
