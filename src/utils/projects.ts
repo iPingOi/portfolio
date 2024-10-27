@@ -3,9 +3,28 @@ import { getCollection } from 'astro:content'
 
 /** Note: this function filters out draft posts based on the environment */
 export async function getAllProjects() {
-	return await getCollection('projects', ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true
-	})
+	return await getCollection(
+		'projects',
+		({
+			data,
+		}: {
+			data: {
+				title: string
+				description: string
+				publishDate: Date
+				updatedDate: Date
+				coverImage: {
+					src: string
+					alt: string
+				}
+				draft: boolean
+				tags: []
+				ogImage: string
+			}
+		}) => {
+			return import.meta.env.PROD ? data.draft !== true : true
+		},
+	)
 }
 
 export function sortMDByDateProjects(
