@@ -5,6 +5,7 @@ import '../styles/app.css'
 
 import { siteConfig } from '@/site-config'
 import type { SiteMeta } from '@/types'
+import SpeedInsights from '@vercel/speed-insights/astro'
 
 type Props = SiteMeta
 
@@ -23,6 +24,8 @@ const socialImageURL = new URL(
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 <meta content='IE=edge' http-equiv='X-UA-Compatible' />
 <title>{siteTitle}</title>
+
+<SpeedInsights />
 
 {/* Icons / Favicon */}
 <!-- <link href="favicon/favicon.ico" rel="icon" sizes="any" />
