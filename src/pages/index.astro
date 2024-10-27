@@ -3,7 +3,6 @@ import PostPreview from '@/components/blog/PostPreview.astro'
 import { AstroSeo } from '@astrolib/seo'
 import Card from '../components/Card.astro'
 import Label from '../components/Label.astro'
-import ProjectCard from '../components/ProjectCard.astro'
 import Section from '../components/Section.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 import PageLayout from '../layouts/BaseLayout.astro'
@@ -201,31 +200,6 @@ const allPostsByDateProjects = sortMDByDateProjects(allPostsProjects).slice(0, M
 				</Section>
 			)
 		}
-
-		<!-- <Section title='Projetos'>
-			<div class='flex justify-end py-2'>
-				<Button title='Ver mais →' href='/projects/' style='button' />
-			</div>
-
-			<div class='grid grid-cols-1 flex-col gap-3 md:grid-cols-2'>
-				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
-					altText='Example'
-					class=''
-				/>
-				<ProjectCard
-					as='div'
-					heading='Coming soon...'
-					subheading=''
-					imagePath='/src/assets/coming-soon.png'
-					altText='Lorem, ipsum dolor sit'
-					class=''
-				/>
-			</div>
-		</Section> -->
 
 		<Section title='Certificações'>
 			<Card
