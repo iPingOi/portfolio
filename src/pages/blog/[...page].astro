@@ -26,22 +26,22 @@ const { page, uniqueTags } = Astro.props
 
 const meta = {
 	description: 'Posts',
-	title: 'Blog'
+	title: 'Blog',
 }
 
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
 			text: '← Postagens anteriores',
-			url: page.url.prev
-		}
+			url: page.url.prev,
+		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
 			text: 'Próximas postagens →',
-			url: page.url.next
-		}
-	})
+			url: page.url.next,
+		},
+	}),
 }
 ---
 

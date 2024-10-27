@@ -10,7 +10,7 @@ export const getStaticPaths = (async () => {
 	const blogEntries = await getAllProjects()
 	return blogEntries.map((entry) => ({
 		params: { slug: entry.slug },
-		props: { entry }
+		props: { entry },
 	}))
 }) satisfies GetStaticPaths
 

@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets'
+import { cn } from '@/utils'
 import type { ImageMetadata } from 'astro'
 import FormattedDate from './FormattedDate.astro'
-import { cn } from '@/utils'
 
 const {
 	as: Tag = 'a',
@@ -12,13 +12,15 @@ const {
 	subheading,
 	imagePath,
 	altText,
-	postDate
+	postDate,
 } = Astro.props
 const images = import.meta.glob<{ default: ImageMetadata }>(
-	'/src/assets/posts/*.{jpeg,jpg,png,gif}'
+	'/src/assets/posts/*.{jpeg,jpg,png,gif}',
 )
 if (!images[imagePath])
-	throw new Error(`"${imagePath}" does not exist in glob: "src/assets/posts/*.{jpeg,jpg,png,gif}"`)
+	throw new Error(
+		`"${imagePath}" does not exist in glob: "src/assets/posts/*.{jpeg,jpg,png,gif}"`,
+	)
 ---
 
 <Tag

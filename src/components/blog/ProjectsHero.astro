@@ -8,13 +8,13 @@ interface Props {
 }
 
 const {
-	content: { data, render }
+	content: { data, render },
 } = Astro.props
 
 const { remarkPluginFrontmatter } = await render()
 
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
-	month: 'long'
+	month: 'long',
 }
 ---
 

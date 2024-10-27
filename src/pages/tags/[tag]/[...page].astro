@@ -16,10 +16,12 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const uniqueTags = getUniqueTags(allPostsByDate)
 
 	return uniqueTags.flatMap((tag) => {
-		const filterPosts = allPostsByDate.filter((post) => post.data.tags.includes(tag))
+		const filterPosts = allPostsByDate.filter((post) =>
+			post.data.tags.includes(tag),
+		)
 		return paginate(filterPosts, {
 			pageSize: 10,
-			params: { tag }
+			params: { tag },
 		})
 	})
 }
@@ -33,22 +35,22 @@ const { tag } = Astro.params
 
 const meta = {
 	description: `View all posts with the tag - ${tag}`,
-	title: `Tag: ${tag}`
+	title: `Tag: ${tag}`,
 }
 
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
 			text: '← Previous Tags',
-			url: page.url.prev
-		}
+			url: page.url.prev,
+		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
 			text: 'Next Tags →',
-			url: page.url.next
-		}
-	})
+			url: page.url.next,
+		},
+	}),
 }
 ---
 

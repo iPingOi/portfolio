@@ -24,13 +24,13 @@ const post = defineCollection({
 			coverImage: z
 				.object({
 					src: image(),
-					alt: z.string()
+					alt: z.string(),
 				})
 				.optional(),
 			draft: z.boolean().default(false),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
-			ogImage: z.string().optional()
-		})
+			ogImage: z.string().optional(),
+		}),
 })
 
 const projects = defineCollection({
@@ -50,13 +50,13 @@ const projects = defineCollection({
 			coverImage: z
 				.object({
 					src: image(),
-					alt: z.string()
+					alt: z.string(),
 				})
 				.optional(),
 			draft: z.boolean().default(false),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
-			ogImage: z.string().optional()
-		})
+			ogImage: z.string().optional(),
+		}),
 })
 
 export const collections = { post, projects }

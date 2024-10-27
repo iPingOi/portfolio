@@ -1,9 +1,10 @@
-import getReadingTime from 'reading-time'
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 import { toString } from 'mdast-util-to-string'
+import getReadingTime from 'reading-time'
 
 export function remarkReadingTime() {
 	// @ts-expect-error:next-line
-	return function (tree, { data }) {
+	return (tree, { data }) => {
 		const textOnPage = toString(tree)
 		const readingTime = getReadingTime(textOnPage)
 		// readingTime.text will give us minutes read as a friendly string,

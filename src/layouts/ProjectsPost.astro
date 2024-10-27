@@ -14,7 +14,7 @@ interface Props {
 const { post } = Astro.props
 const {
 	data: { description, ogImage, publishDate, title, updatedDate },
-	slug
+	slug,
 } = post
 
 const socialImage = ogImage ?? `/og-image/${slug}.png`

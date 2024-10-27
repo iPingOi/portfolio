@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 
+import Button from '@/components/Button.astro'
 import BlogHero from '@/components/blog/Hero.astro'
 import TOC from '@/components/blog/TOC.astro'
-import Button from '@/components/Button.astro'
 
 import PageLayout from './BaseLayout.astro'
 
@@ -14,7 +14,7 @@ interface Props {
 const { post } = Astro.props
 const {
 	data: { description, ogImage, publishDate, title, updatedDate },
-	slug
+	slug,
 } = post
 
 const socialImage = ogImage ?? `/og-image/${slug}.png`

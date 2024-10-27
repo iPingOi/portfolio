@@ -8,7 +8,11 @@ import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
 import ProjectsPreview from '@/components/blog/ProjectsPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import { getAllProjects, getUniqueTagsProjects, sortMDByDateProjects } from '@/utils'
+import {
+	getAllProjects,
+	getUniqueTagsProjects,
+	sortMDByDateProjects,
+} from '@/utils'
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllProjects()
@@ -26,22 +30,22 @@ const { page, uniqueTags } = Astro.props
 
 const meta = {
 	description: 'Projects',
-	title: 'Projetos'
+	title: 'Projetos',
 }
 
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
 			text: '← Postagens anteriores',
-			url: page.url.prev
-		}
+			url: page.url.prev,
+		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
 			text: 'Próximas postagens →',
-			url: page.url.next
-		}
-	})
+			url: page.url.next,
+		},
+	}),
 }
 ---
 

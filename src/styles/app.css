@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi-Variable.ttf');
+	font-family: "Satoshi";
+	src: url("/fonts/Satoshi-Variable.ttf");
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi-VariableItalic.ttf');
+	font-family: "Satoshi";
+	src: url("/fonts/Satoshi-VariableItalic.ttf");
 	font-style: italic;
 	font-display: swap;
 }
@@ -79,7 +79,7 @@
 	}
 
 	.card-wrapper::before {
-		background: conic-gradient(pink 0deg, #3772FF 0deg, transparent 80deg);
+		background: conic-gradient(pink 0deg, #3772ff 0deg, transparent 80deg);
 
 		@apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
 	}
