@@ -39,6 +39,24 @@ const DEVELOPMENT = [
 		iconBgColour: '#06A67F',
 	},
 ]
+
+const VSCODE = [
+	{
+		name: 'Biome',
+		description: 'Toolchain of the web',
+		href: 'https://marketplace.visualstudio.com/items?itemName=biomejs.biome',
+		iconPath: 'biome',
+		iconBgColour: '#2C2C32',
+	},
+	{
+		name: 'Console Ninja',
+		description:
+			'JavaScript console.log output and runtime errors right next to your code',
+		href: 'https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja',
+		iconPath: 'console-ninja',
+		iconBgColour: '#2C2C32',
+	},
+]
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -62,12 +80,13 @@ const DEVELOPMENT = [
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
 				<h1 class='mb-1 text-2xl font-bold'>Ferramentas</h1>
-				<p>Ferramentas e software que uso diariamente.</p>
+				<p>Ferramentas e softwares que uso diariamente.</p>
 			</div>
 
 			<ToolSection title='Design' tools={DESIGN} />
 			<ToolSection title='Produtividade' tools={PRODUCTIVITY} />
 			<ToolSection title='Desenvolvimento' tools={DEVELOPMENT} />
+			<ToolSection title='Visual Studio Code Plugins' tools={VSCODE} />
 		</div>
 	</div>
 </PageLayout>
