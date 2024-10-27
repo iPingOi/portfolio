@@ -12,7 +12,12 @@ import profilePhoto from '../assets/profile.png'
 
 import Button from '@/components/Button.astro'
 import ProjectsPreview from '@/components/blog/ProjectsPreview.astro'
-import { getAllPosts, getAllProjects, sortMDByDate, sortMDByDateProjects } from '@/utils'
+import {
+	getAllPosts,
+	getAllProjects,
+	sortMDByDate,
+	sortMDByDateProjects,
+} from '@/utils'
 
 const languages = ['JavaScript', 'TypeScript', 'Golang']
 const frontend = ['Reactjs', 'Nextjs', 'Astrojs']
@@ -24,7 +29,10 @@ const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 const allPostsProjects = await getAllProjects()
-const allPostsByDateProjects = sortMDByDateProjects(allPostsProjects).slice(0, MAX_POSTS)
+const allPostsByDateProjects = sortMDByDateProjects(allPostsProjects).slice(
+	0,
+	MAX_POSTS,
+)
 ---
 
 <AstroSeo
@@ -168,10 +176,11 @@ const allPostsByDateProjects = sortMDByDateProjects(allPostsProjects).slice(0, M
 		{
 			allPostsByDate.length > 0 && (
 				<Section title='Blog'>
-					<div class='flex justify-end py-2'>
-						<Button title='Ver mais →' href='/blog/' style='button' />
-					</div>
-
+					{ allPostsByDateProjects.length > 3 && (
+						<div class='flex justify-end py-2'>
+							<Button title='Ver mais →' href='/blog/' style='button' />
+						</div>
+					)}
 					<div class='grid grid-cols-1 flex-col gap-3 md:grid-cols-2'>
 						{allPostsByDate.map((p) => (
 							<div class='flex flex-col gap-x-2 sm:flex-row'>
@@ -186,10 +195,11 @@ const allPostsByDateProjects = sortMDByDateProjects(allPostsProjects).slice(0, M
 		{
 			allPostsByDateProjects.length > 0 && (
 				<Section title='Projetos'>
-					<div class='flex justify-end py-2'>
-						<Button title='Ver mais →' href='/blog/' style='button' />
-					</div>
-
+					{ allPostsByDateProjects.length > 3 && (
+						<div class='flex justify-end py-2'>
+							<Button title='Ver mais →' href='/projects/' style='button' />
+						</div>
+					)}
 					<div class='grid grid-cols-1 flex-col gap-3 md:grid-cols-2'>
 						{allPostsByDateProjects.map((p) => (
 							<div class='flex flex-col gap-x-2 sm:flex-row'>
