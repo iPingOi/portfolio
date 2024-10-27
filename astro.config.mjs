@@ -11,6 +11,8 @@ import { remarkReadingTime } from './src/utils/remarkReadingTime.ts'
 
 import vercel from '@astrojs/vercel/serverless'
 
+import playformCompress from '@playform/compress'
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.pingodev.com',
@@ -22,6 +24,7 @@ export default defineConfig({
 		sitemap(),
 		mdx(),
 		icon(),
+		playformCompress(),
 	],
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
