@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content'
 import Button from '@/components/Button.astro'
 import ProjectsHero from '@/components/blog/ProjectsHero.astro'
 import TOC from '@/components/blog/TOC.astro'
+import { Disqus } from 'astro-disqus'
 
 import PageLayout from './BaseLayout.astro'
 
@@ -71,13 +72,5 @@ const { headings } = await post.render()
 			</svg>
 		</button>
 	</div>
-	<div id="disqus_thread" class="w-full pt-20"></div>
+	<Disqus embed="https://pingo-dev.disqus.com/embed.js" class='w-full pt-20' />
 </PageLayout>
-
-<script>
-    (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://pingo-dev.disqus.com/embed.js';
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
